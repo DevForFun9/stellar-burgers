@@ -28,11 +28,11 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   selectors: {
-    selectUser: (state: TAuthStore) => state.user,
-    selectIsAuthorized: (state: TAuthStore) => !!state.user,
-    selectUserIsLoading: (state: TAuthStore) => state.isLoading,
-    selectUserError: (state: TAuthStore) => state.loginError,
-    selectIsAuthChecked: (state: TAuthStore) => state.isAuthChecked
+    selectUser: (state) => state.user,
+    selectIsAuthorized: (state) => !!state.user,
+    selectUserIsLoading: (state) => state.isLoading,
+    selectUserError: (state) => state.loginError,
+    selectIsAuthChecked: (state) => state.isAuthChecked
   },
   reducers: {
     setAuthChecked: (state, action: PayloadAction<boolean>) => {
