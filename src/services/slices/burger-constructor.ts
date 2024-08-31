@@ -27,8 +27,10 @@ export const burgerConstructorSlice = createSlice({
         payload: { ...ingredient, id: crypto.randomUUID() }
       })
     },
-    removeFromConstructor: (state, action: PayloadAction<number>) => {
-      state.ingredients.splice(action.payload, 1);
+    removeFromConstructor: (state, action: PayloadAction<string>) => {
+      state.ingredients = state.ingredients.filter(
+        (ingredient) => ingredient.id != action.payload
+      );
     },
     resetConstructor: (state) => {
       state.bun = null;
